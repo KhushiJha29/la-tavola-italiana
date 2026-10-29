@@ -1,0 +1,706 @@
+body{
+    margin:0px;
+    background-color: hsl(43, 25%, 45%);
+    color: hsl(40, 35%, 88%);
+    font-family: "Montserrat";
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: hsl(0, 9%, 21%);
+    position: relative;
+}
+.navbar > p {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 30px;
+    color: hsl(34, 44%, 85%);
+    margin: 0;
+    max-width: 220px;
+}
+.navbar ul{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    background-color: hsl(0, 9%, 21%);
+}
+.navbar a{
+    text-decoration: none;
+    color: hsl(40, 35%, 88%);
+    display: block;
+}
+.navbar a:hover{
+    color: hsl(240, 41%, 44%);
+}
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: hsl(40, 35%, 88%);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+       padding: 12px 24px;
+    }
+    .navbar > p {
+        max-width: 180px;
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 180px;
+        padding: 20px;
+        background-color: hsl(0, 9%, 21%);
+        box-sizing: border-box;
+        z-index: 10;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+}
+.navbar a.active-link {
+    color: hsl(240, 41%, 65%);
+}
+.hero h1{
+    font-family:"Playfair Display";
+    font-style: italic;
+}
+.hero p{
+    letter-spacing: 0.15em;
+    line-height: 30px;
+}
+.hero p:nth-child(3){
+    width: 450px;
+}
+.hero button{
+    margin: 5px;
+    padding: 10px;
+    width: 160px;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.hero button:nth-child(4){
+    background-color:hsl(34, 44%, 66%);
+}
+.hero button:nth-child(4):hover{
+    background-color:hsl(34, 42%, 49%);
+}
+.hero button:nth-of-type(2):hover{
+    border-color: hsl(34, 65%, 40%);
+}
+.hero{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(italian.webp);
+    background-size: cover;
+    position: relative;
+}
+.hero::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+.menu{
+    padding: 15px;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-style: italic;
+    background-color: hsl(0, 0%, 0%);
+}
+.menu h1{
+    font-size: 36px;
+}
+.toggle-menu-btn {
+    background-color: hsl(10, 45%, 30%);
+    color: hsl(40, 35%, 88%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 15px 0 25px;
+}
+
+.toggle-menu-btn:hover {
+    background-color: hsl(11, 45%, 40%);
+}
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0 35px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: hsl(40, 35%, 88%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: 2px solid hsl(10, 45%, 40%);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: hsl(10, 45%, 30%);
+    border-color: hsl(10, 45%, 30%);
+    color: hsl(40, 35%, 88%);
+}
+[hidden] {
+    display: none !important;
+}
+.menu h2{
+    font-size: 28px;
+    margin: 25px;
+}
+.menu h3{
+    font-size: 22px;
+    margin: 20px;
+}
+.menu h4{
+    font-size: 19px;
+}
+.menu p{
+    font-size: 16px;
+    font-style: normal;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu .price{
+    font-size: 25px;
+    font-weight: 600;
+}
+.dish{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 30px;
+}
+.dishpizza{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin: 20px;
+}
+.menu img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.dish div{
+    width: 350px;
+}
+.pizza-category{
+    margin: 15px;
+}
+
+.add-to-cart-btn {
+    background-color: hsl(10, 45%, 30%);
+    color: hsl(40, 35%, 88%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: hsl(11, 45%, 40%);
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+}
+
+#cart-items button {
+    margin: 0 10px;
+}
+
+#cart-items span {
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+}
+.cart {
+    max-width: 600px;
+    margin: 50px auto 20px;
+    padding: 25px;
+    border: 1px solid hsl(10, 30%, 35%);
+    border-radius: 12px;
+    text-align: center;
+    color: hsl(40, 35%, 88%);
+}
+
+.cart h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+#cart-items > div {
+    padding: 15px 0;
+    border-bottom: 1px solid hsl(0, 0%, 30%);
+}
+
+#cart-items p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+#cart-items button {
+    background-color: hsl(10, 45%, 30%);
+    color: hsl(40, 35%, 88%);
+    border: none;
+    border-radius: 6px;
+    padding: 7px 12px;
+    margin: 0 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cart-items button:hover {
+    background-color: hsl(11, 45%, 40%);
+}
+#cart-items span {
+    display: inline-block;
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+.cart > p {
+    font-size: 16px;
+    margin-top: 18px;
+}
+#cart-total {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.proceed-btn {
+    background-color: hsl(10, 45%, 30%);
+    color: hsl(40, 35%, 88%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
+}
+
+.proceed-btn:hover {
+    background-color: hsl(11, 45%, 40%);
+    transform: translateY(-2px);
+}
+
+.proceed-btn:active {
+    transform: translateY(0);
+}
+.aboutus{
+    background-color: hsl(38, 45%, 94%);
+    padding: 10px;
+    color:hsl(102, 20%, 20%);
+    font-family: "Playfair Display";
+    font-style: italic;
+}
+.aboutus h1{
+    font-size: 36px;
+    text-align: center;
+}
+.story-text p:first-of-type{
+    font-size: 24px;
+}
+.story-text p:not(:first-of-type){
+    font-family: "Montserrat";
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.storyheading p{
+    font-size: 28px;
+}
+.about-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.story-text{
+    width: 50%;
+}
+.storyheading{
+    width: 40%
+}
+.gallery{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.gallery img{
+    width: 130px;
+    height: 150px;
+    object-fit: cover;
+}
+.second{
+    display: block;
+    margin-left: 40px;
+}
+.delivery{
+    background-color: hsl(38, 50%, 97%);
+    padding-top: 125px;
+    padding-left: 10px;
+    color:hsl(102, 20%, 20%);
+    margin-bottom: 0;
+    overflow: auto;
+}
+.textcontainer label{
+    letter-spacing: 3px;
+    color: hsl(34, 69%, 35%);
+}
+.textcontainer h1{
+    font-family: "Playfair Display";
+    font-style: italic;
+    font-weight: lighter;
+}
+.textcontainer p{
+    max-width: 450px;
+    line-height: 1.7;
+    font-size: 18px;
+}
+.deliverycards{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.card{
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 90%);
+    padding: 35px;
+    width: 360px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.03);
+    border: 1px solid hsl(34, 69%, 35%);
+    cursor: pointer;
+}
+.card img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+.card h2{
+    font-size: 22px;
+    font-family: "Montserrat";
+}
+.card p{
+    font-size: 14px;
+    color: hsl(0, 0%, 45%);
+}
+.card hr{
+    color: hsl(0, 0%, 88%);
+    text-decoration-thickness: 1px;
+    width: 100%;
+    margin: 22px 0;
+}
+.card a{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+.deliverycards .card:first-child a{
+    color: hsl(19, 100%, 50%);
+}
+.deliverycards .card:first-child:hover {
+    border-color: hsl(19, 100%, 50%);
+}
+.deliverycards .card:nth-child(2) a{
+    color: hsl(356, 74%, 55%);
+}
+.deliverycards .card:nth-child(2):hover {
+    border-color: hsl(356, 74%, 55%);
+}
+.deliverycards .card:nth-child(3) a{
+    color:hsl(254, 55%, 32%);
+}
+.deliverycards .card:nth-child(3):hover {
+    border-color: hsl(254, 55%, 32%);
+}
+.delivery-form-container {
+    max-width: 600px;
+    margin: 70px auto 40px;
+    padding: 35px;
+    background-color: hsl(43, 20%, 18%);
+    border: 1px solid hsl(10, 30%, 35%);
+    border-radius: 14px;
+    color: hsl(40, 35%, 88%);
+    box-sizing: border-box;
+}
+
+.delivery-form-container h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.delivery-form-container > p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 28px;
+}
+.delivery-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.delivery-form label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.delivery-form input,
+.delivery-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    background-color: hsl(43, 15%, 95%);
+    color: hsl(0, 0%, 15%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    border: 1px solid hsl(10, 20%, 55%);
+    border-radius: 7px;
+    outline: none;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.delivery-form input:focus,
+.delivery-form textarea:focus {
+    border-color: hsl(10, 45%, 40%);
+    box-shadow: 0 0 0 3px hsla(10, 45%, 40%, 0.2);
+}
+
+.delivery-form textarea {
+    resize: vertical;
+}
+.place-order-btn {
+    align-self: center;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: hsl(10, 45%, 30%);
+    color: hsl(40, 35%, 88%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
+}
+.place-order-btn:hover {
+    background-color: hsl(11, 45%, 40%);
+    transform: translateY(-2px);
+}
+.place-order-btn:active {
+    transform: translateY(0);
+}
+@media (max-width: 600px) {
+    .delivery-form-container {
+        width: calc(100% - 32px);
+        margin: 45px auto 30px;
+        padding: 24px 18px;
+    }
+
+    .delivery-form-container h2 {
+        font-size: 24px;
+    }
+
+    .place-order-btn {
+        width: 100%;
+    }
+}
+.order-confirmation {
+    text-align: center;
+    padding: 25px;
+    margin-top: 25px;
+    border: 1px solid hsl(10, 30%, 35%);
+    border-radius: 12px;
+    color: hsl(40, 35%, 88%);
+    background-color: hsl(43, 20%, 18%);
+}
+
+.order-confirmation h2 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 12px;
+}
+
+.order-confirmation p {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.confirmation-details {
+    margin: 20px 0;
+    overflow-wrap: anywhere;
+}
+
+.back-to-menu-btn {
+    background-color: hsl(10, 45%, 30%);
+    color: hsl(40, 35%, 88%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.back-to-menu-btn:hover {
+    background-color: hsl(11, 45%, 40%);
+}
+
+[hidden] {
+    display: none !important;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: hsl(0, 0%, 0%);
+}
+.branding h1{
+    color: hsl(40, 35%, 92%);
+    font-family: "Playfair Display";
+    font-style: italic;
+}
+.branding p:first-of-type{
+    color: hsl(30, 75%, 55%);
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+.branding p:nth-of-type(2){
+    color: hsl(38, 35%, 75%);
+    font-size: 12px;
+}
+.branding p:nth-of-type(3){
+    color: hsl(40, 25%, 85%);
+    font-size: 15px;
+}
+.findus h3{
+    color: hsl(35, 55%, 58%);
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.findus p{
+    color: hsl(40, 20%, 78%);
+    font-size: 14px;
+}
+.orderonline h3{
+    color: hsl(35, 55%, 58%);
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.orderonline li{
+    color: hsl(40, 15%, 60%);
+    font-size: 14px;
+    padding: 7px;
+}
+.orderonline ul{
+    padding-left: 15px;
+}
+.orderonline li:first-of-type{
+    font-family: "Montserrat";
+    font-style: normal;
+}
+.orderonline li:first-of-type::marker{
+    color:hsl(19, 100%, 50%);
+}
+.orderonline li:nth-of-type(2)::marker{
+    color:hsl(356, 74%, 55%);
+}
+.orderonline li:nth-of-type(3)::marker{
+    color: hsl(254, 55%, 32%);
+}
+footer hr{
+    border: none;
+    border-top: 1px solid hsl(60, 8%, 18%);
+    margin: 25px 0;
+}
+.copyright p{
+    color: hsl(40, 15%, 60%);
+    font-size: 12px;
+    margin-left: 18px;
+}
+
+.order-confirmation[hidden] {
+    display: none !important;
+}

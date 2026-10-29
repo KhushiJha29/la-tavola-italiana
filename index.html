@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>La Tavola Italiana</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <p>La Tavola Italiana</p>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
+        </nav>
+        <section class="hero" id="home">
+            <p>AUTHENTIC ITALIAN CUISINE</p>
+            <h1>A taste of Italy, made with amore</h1>
+            <p>Experience traditional Italian flavors, handmade pasta, and fresh ingredients inspired by the heart of Italy.</p>
+            <button class="explore-btn">Explore our menu</button>
+            <button class="order-btn">Order Delivery</button>
+        </section>
+        <section class="menu" id="menu">
+            <h1>OUR MENU</h1>
+            <button class="toggle-menu-btn">Hide Menu</button>
+            <div class="menu-filters">
+                <button class="filter-btn" data-category="all">All</button>
+                <button class="filter-btn" data-category="pasta">Pasta</button>
+                <button class="filter-btn" data-category="pizza">Pizza</button>
+                <button class="filter-btn" data-category="drinks">Drinks</button>
+            </div>
+            <div class="menu-content">
+            <h2>PASTA</h2>
+            <div class="dish pasta">
+                <img src="fa pasta.avif">
+                <div>
+                    <h3>Fettuccine Alfredo</h3>
+                    <p>Creamy fettuccine pasta tossed in a rich Alfredo sauce made with butter, cream, and Parmesan cheese.</p>
+                    <p class="price">₹489</p>
+                    
+                    <button class="add-to-cart-btn"
+                    data-name="Fettuccine Alfredo"
+                    data-price="489">
+                    Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="dish pasta">
+                <img src="pa pasta.jpg">
+                <div>
+                    <h3>Penne Arrabbiata</h3>
+                    <p>Penne pasta tossed in a spicy tomato sauce with garlic, chili, and fresh herbs.</p>
+                    <p class="price">₹489</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Penne Arrabbiata"
+                            data-price="489">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="dish pasta">
+                <img src="lasagne p.webp">
+                <div>
+                    <h3>Lasagne</h3>
+                    <p>Layers of tender pasta sheets with rich tomato sauce, creamy cheese, and melted mozzarella, baked until golden and delicious.</p>
+                    <p class="price">₹489</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Lasagne"
+                            data-price="489">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <h2>PIZZA</h2>
+            <h3 class="pizza-category">VEG PIZZA</h3>
+            <div class="dishpizza pizza">
+                <img src="margherita.jpg">
+                <div>
+                    <h4>Margherita</h4>
+                    <p>Classic Italian pizza topped with rich tomato sauce, fresh mozzarella, fragrant basil, and a drizzle of olive oil.</p>
+                    <p class="price">₹410</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Margherita"
+                            data-price="410">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="dishpizza pizza">
+                <img src="vd pizza.jpg">
+                <div>
+                    <h4>Veggie Delight</h4>
+                    <p>A delicious pizza topped with fresh bell peppers, onions, tomatoes, mushrooms, and sweet corn, layered over rich tomato sauce and melted mozzarella.</p>
+                    <p class="price">₹425</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Veggie Delight"
+                            data-price="425">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <h3 class="pizza-category">NON-VEG PIZZA</h3>
+            <div class="dishpizza pizza">
+                <img src="cp pizza.jpeg">
+                <div>
+                    <h4>Chicken Pepperoni</h4>
+                    <p>Pizza topped with savory chicken pepperoni, rich tomato sauce, and melted mozzarella cheese, baked to perfection.</p>
+                    <p class="price">₹525</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Chicken Pepperoni"
+                            data-price="525">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="dishpizza pizza">
+                <img src="cbbq pizza.jpeg">
+                <div>
+                    <h4>Chicken BBQ</h4>
+                    <p>Pizza topped with tender BBQ chicken, smoky barbecue sauce, onions, and melted mozzarella cheese.</p>
+                    <p class="price">₹535</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Chicken BBQ"
+                            data-price="535">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <h2>DRINKS</h2>
+            <div class="dish drinks">
+                <img src="fls drink.jpg">
+                <div>
+                    <h3>Fresh Lime Soda</h3>
+                    <p>Refreshing fresh lime & soda served with (sweet/salt/mix).</P>
+                    <p class="price">₹118</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Fresh Lime Soda"
+                            data-price="118">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="dish drinks">
+                <img src="sunset drinks.webp">
+                <div>
+                    <h3>Sunset Divine</h3>
+                    <p>A layered drink consisiting of orange, watermelon, fresh lime topeed with sprite.</p>
+                    <p class="price">₹180</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Sunset Divine"
+                            data-price="180">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="dish drinks">
+                <img src="pina colada.jpg">
+                <div>
+                    <h3>Pina Colada</h3>
+                    <p>Blend of pineapple juice, coconut milk & ice cream (Vanilla) with a Dash of grenadine syrup.</p>
+                    <p class="price">₹278</p>
+                    
+                    <button class="add-to-cart-btn"
+                            data-name="Pina Colada"
+                            data-price="278">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            </div>
+            
+            <div class="cart">
+                <h2>Your Cart</h2>
+                <p>Items in cart: <span id="cart-count">0</span></p>
+                <div id="cart-items"></div>
+                <p>Total: ₹<span id="cart-total">0</span></p>
+                
+                <button class="proceed-btn">Proceed to Delivery</button>
+            </div>
+        </section>
+        <section class="aboutus" id="about">
+            <h1>OUR STORY</h1>
+            <div class="about-content">
+                <div class="story-text">
+                    <p>Cooking with love,<br>inspired by the heart of Italy.</p>
+                    <p>At La Tavola Italiana, we celebrate the timeless traditions of Italian cooking, where every dish tells a story of passion, family, and togetherness. Inspired by the kitchens of Italy, we bring classic flavors to your table with care and a love for good food.</p>
+                    <p>From creamy, freshly prepared pasta to oven-baked pizzas topped with delicious ingredients, every dish is crafted to bring you a little taste of Italy.</p>
+                    <p>We believe that great food is about more than what's on the plate — it's about sharing moments, creating memories, and enjoying the simple pleasure of eating well.</p>
+                    <p>At La Tavola Italiana, every meal is an invitation to experience Italy, one bite at a time.</p>
+                </div>
+                <div class="storyheading">
+                    <p>Where Italy comes alive <br> <span class="second">on every plate</span></p>
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="image1.webp">
+                <img src="image2.webp">
+                <img src="image3.webp">
+                <img src="image4.jpeg">
+                <img src="imagee5.jpg">
+            </div>
+        </section>
+        <section class="delivery" id="delivery">
+            <div class="textcontainer">
+                <label>ORDER AT HOME</label>
+                <h1>Flavor, delivered <br> to your door</h1>
+                <p>Enjoy our signature pastas, pizzas and drinks at home. Our delivery menu is curated for the journey — each dish packed and sealed to arrive as close to perfect as possible.</p>
+            </div>
+            <div class="deliverycards">
+                <div class="card">
+                    <img src="swiggy.jpeg">
+                    <h2>Swiggy</h2>
+                    <p>25-35 min delivery</p>
+                    <hr>
+                    <a href="https://www.swiggy.com/"><span>ORDER NOW</span><span>→</span></a></a>
+                </div>
+                <div class="card">
+                    <img src="zomato.png">
+                    <h2>Zomato</h2>
+                    <p>30-40 min delivery</p>
+                    <hr>
+                    <a href="https://www.zomato.com/"><span>ORDER NOW</span><span>→</span></a></a>
+                </div>
+                <div class="card">
+                    <img src="eatsure.png">
+                    <h2>Eat Sure</h2>
+                    <p>20-35 min delivery</p>
+                    <hr>
+                    <a href="https://www.eatsure.com/"><span>ORDER NOW</span><span>→</span></a>
+                </div>
+            </div>
+            
+            <div class="delivery-form-container">
+            <h2>Order Directly From Us</h2>
+            <p>Enter your details to arrange your delivery.</p>
+
+            <form class="delivery-form">
+
+            <label for="customer-name">Full Name</label>
+            <input
+                type="text"
+                id="customer-name"
+                name="customer-name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="customer-phone">Phone Number</label>
+            <input
+                type="tel"
+                id="customer-phone"
+                name="customer-phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+            <label for="customer-address">Delivery Address</label>
+            <textarea
+                id="customer-address"
+                name="customer-address"
+                placeholder="Enter your complete address"
+                rows="4"
+                required
+            ></textarea>
+
+            <button type="submit" class="place-order-btn">
+                Place Order
+            </button>
+
+        </form>
+        <div class="order-confirmation" hidden>
+            <h2>Thank You for Your Order!</h2>
+            <p>Your order has been placed successfully.</p>
+
+            <div class="confirmation-details"></div>
+
+            <button type="button" class="back-to-menu-btn">
+                Back to Menu
+            </button>
+            </div>
+        </div>
+</section>
+        <footer id="contact">
+            <div class="branding">
+                <h1>La Tavola Italiana</h1>
+                <p>DELHI · EST. 2026</p>
+                <p>ITALIAN CUISINE · MADE WITH AMORE</p>
+                <p>A little taste of Italy, a lot of love.</p>
+            </div>
+            <div class="findus">
+                <h3>FIND US</h3>
+                <p>12, Hauz Khas Village, New Delhi, Delhi 110016</p>
+                <p>+91 11 4567 8900</p>
+                <p>table@LaTavolaItaliana.in</p>
+            </div>
+            <div class="orderonline">
+                <h3>ORDER ONLINE</h3>
+                <ul>
+                    <li>Swiggy</li>
+                    <li>Zomato</li>
+                    <li>Eat sure</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="copyright">
+                <p>© 2026 La Tavola Italiana. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
